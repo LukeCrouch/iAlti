@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		609669E02523A75A0043F0A0 /* iAlti WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		609669E52523A75D0043F0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669E42523A75D0043F0A0 /* Assets.xcassets */; };
+		609669EC2523A75D0043F0A0 /* iAlti WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 609669EB2523A75D0043F0A0 /* iAlti WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		609669F12523A75D0043F0A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609669F02523A75D0043F0A0 /* ContentView.swift */; };
+		609669F32523A75D0043F0A0 /* iAltiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609669F22523A75D0043F0A0 /* iAltiApp.swift */; };
+		609669F52523A75D0043F0A0 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609669F42523A75D0043F0A0 /* ComplicationController.swift */; };
+		609669F72523A75F0043F0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669F62523A75F0043F0A0 /* Assets.xcassets */; };
+		609669FA2523A75F0043F0A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669F92523A75F0043F0A0 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		609669E12523A75A0043F0A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 609669D52523A7590043F0A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 609669DE2523A75A0043F0A0;
+			remoteInfo = "iAlti WatchKit App";
+		};
+		609669ED2523A75D0043F0A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 609669D52523A7590043F0A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 609669EA2523A75D0043F0A0;
+			remoteInfo = "iAlti WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60966A012523A7600043F0A0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				609669EC2523A75D0043F0A0 /* iAlti WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60966A052523A7600043F0A0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				609669E02523A75A0043F0A0 /* iAlti WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		609669DB2523A7590043F0A0 /* iAlti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAlti.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iAlti WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		609669E42523A75D0043F0A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		609669E62523A75D0043F0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		609669EB2523A75D0043F0A0 /* iAlti WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iAlti WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		609669F02523A75D0043F0A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		609669F22523A75D0043F0A0 /* iAltiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAltiApp.swift; sourceTree = "<group>"; };
+		609669F42523A75D0043F0A0 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		609669F62523A75F0043F0A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		609669F92523A75F0043F0A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		609669FB2523A75F0043F0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		609669E82523A75D0043F0A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		609669D42523A7590043F0A0 = {
+			isa = PBXGroup;
+			children = (
+				609669E32523A75A0043F0A0 /* iAlti WatchKit App */,
+				609669EF2523A75D0043F0A0 /* iAlti WatchKit Extension */,
+				609669DC2523A7590043F0A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		609669DC2523A7590043F0A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				609669DB2523A7590043F0A0 /* iAlti.app */,
+				609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */,
+				609669EB2523A75D0043F0A0 /* iAlti WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		609669E32523A75A0043F0A0 /* iAlti WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				609669E42523A75D0043F0A0 /* Assets.xcassets */,
+				609669E62523A75D0043F0A0 /* Info.plist */,
+			);
+			path = "iAlti WatchKit App";
+			sourceTree = "<group>";
+		};
+		609669EF2523A75D0043F0A0 /* iAlti WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				609669F02523A75D0043F0A0 /* ContentView.swift */,
+				609669F22523A75D0043F0A0 /* iAltiApp.swift */,
+				609669F42523A75D0043F0A0 /* ComplicationController.swift */,
+				609669F62523A75F0043F0A0 /* Assets.xcassets */,
+				609669FB2523A75F0043F0A0 /* Info.plist */,
+				609669F82523A75F0043F0A0 /* Preview Content */,
+			);
+			path = "iAlti WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		609669F82523A75F0043F0A0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				609669F92523A75F0043F0A0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		609669DA2523A7590043F0A0 /* iAlti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60966A062523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti" */;
+			buildPhases = (
+				609669D92523A7590043F0A0 /* Resources */,
+				60966A052523A7600043F0A0 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				609669E22523A75A0043F0A0 /* PBXTargetDependency */,
+			);
+			name = iAlti;
+			productName = iAlti;
+			productReference = 609669DB2523A7590043F0A0 /* iAlti.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		609669DE2523A75A0043F0A0 /* iAlti WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60966A022523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti WatchKit App" */;
+			buildPhases = (
+				609669DD2523A75A0043F0A0 /* Resources */,
+				60966A012523A7600043F0A0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				609669EE2523A75D0043F0A0 /* PBXTargetDependency */,
+			);
+			name = "iAlti WatchKit App";
+			productName = "iAlti WatchKit App";
+			productReference = 609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		609669EA2523A75D0043F0A0 /* iAlti WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 609669FE2523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti WatchKit Extension" */;
+			buildPhases = (
+				609669E72523A75D0043F0A0 /* Sources */,
+				609669E82523A75D0043F0A0 /* Frameworks */,
+				609669E92523A75D0043F0A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iAlti WatchKit Extension";
+			productName = "iAlti WatchKit Extension";
+			productReference = 609669EB2523A75D0043F0A0 /* iAlti WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		609669D52523A7590043F0A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					609669DA2523A7590043F0A0 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					609669DE2523A75A0043F0A0 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					609669EA2523A75D0043F0A0 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 609669D82523A7590043F0A0 /* Build configuration list for PBXProject "iAlti" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 609669D42523A7590043F0A0;
+			productRefGroup = 609669DC2523A7590043F0A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				609669DA2523A7590043F0A0 /* iAlti */,
+				609669DE2523A75A0043F0A0 /* iAlti WatchKit App */,
+				609669EA2523A75D0043F0A0 /* iAlti WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		609669D92523A7590043F0A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		609669DD2523A75A0043F0A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609669E52523A75D0043F0A0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		609669E92523A75D0043F0A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609669FA2523A75F0043F0A0 /* Preview Assets.xcassets in Resources */,
+				609669F72523A75F0043F0A0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		609669E72523A75D0043F0A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				609669F12523A75D0043F0A0 /* ContentView.swift in Sources */,
+				609669F32523A75D0043F0A0 /* iAltiApp.swift in Sources */,
+				609669F52523A75D0043F0A0 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		609669E22523A75A0043F0A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 609669DE2523A75A0043F0A0 /* iAlti WatchKit App */;
+			targetProxy = 609669E12523A75A0043F0A0 /* PBXContainerItemProxy */;
+		};
+		609669EE2523A75D0043F0A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 609669EA2523A75D0043F0A0 /* iAlti WatchKit Extension */;
+			targetProxy = 609669ED2523A75D0043F0A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		609669FC2523A7600043F0A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		609669FD2523A7600043F0A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		609669FF2523A7600043F0A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iAlti WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "iAlti WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		60966A002523A7600043F0A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iAlti WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "iAlti WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		60966A032523A7600043F0A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iAlti_WatchKit_Extension;
+				INFOPLIST_FILE = "iAlti WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		60966A042523A7600043F0A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iAlti_WatchKit_Extension;
+				INFOPLIST_FILE = "iAlti WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		60966A072523A7600043F0A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		60966A082523A7600043F0A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		609669D82523A7590043F0A0 /* Build configuration list for PBXProject "iAlti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				609669FC2523A7600043F0A0 /* Debug */,
+				609669FD2523A7600043F0A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		609669FE2523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				609669FF2523A7600043F0A0 /* Debug */,
+				60966A002523A7600043F0A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60966A022523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60966A032523A7600043F0A0 /* Debug */,
+				60966A042523A7600043F0A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60966A062523A7600043F0A0 /* Build configuration list for PBXNativeTarget "iAlti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60966A072523A7600043F0A0 /* Debug */,
+				60966A082523A7600043F0A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 609669D52523A7590043F0A0 /* Project object */;
+}
