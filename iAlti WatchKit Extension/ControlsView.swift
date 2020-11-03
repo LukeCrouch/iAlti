@@ -6,69 +6,16 @@
 //
 
 import SwiftUI
-import CoreMotion
-import CoreLocation
-import Combine
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
-    override init() {
-        super.init()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "Purpose Key")
-        self.locationManager.allowsBackgroundLocationUpdates = true
-    }
-    
-    @Published var locationStatus: CLAuthorizationStatus? {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    @Published var lastLocation: CLLocation? {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    var statusString: String {
-        guard let status = locationStatus else {
-            return "unknown"
-        }
-        
-        switch status {
-        case .notDetermined: return "notDetermined"
-        case .authorizedWhenInUse: return "authorizedWhenInUse"
-        case .authorizedAlways: return "authorizedAlways"
-        case .restricted: return "restricted"
-        case .denied: return "denied"
-        default: return "unknown"
-        }
-    }
-    
-    //let objectWillChange = PassthroughSubject<Void, Never>()
-    
-    private let locationManager = CLLocationManager()
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.locationStatus = status
-        print(#function, statusString)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        self.lastLocation = location
-        print(#function, location)
-    }
-    
-    func stopLocation() {
-        self.locationManager.stopUpdatingLocation()
-    }
+struct ControlsView: View {
+    @EnvironmentObject var globals: Globals
+    @EnvironmentObject var userSettings: UserSettings
+    @Binding var view: Int
+    @State private var showModal = false
+    private let activityType = CLActivityType.airborne
     
     func startLocation() {
-        switch CLAuthorizationStatus(rawValue: 0) {
+        switch LocationManager.shared.locationStatus {
         case .notDetermined:
             print("CL: Awaiting user prompt...")
         //fatalError("Awaiting CL user prompt...")
@@ -85,27 +32,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         @unknown default:
             fatalError("Unknown CL Authorization Status!")
         }
-        self.locationManager.startUpdatingLocation()
+        LocationManager.shared.start()
+        globals.isLocationStarted = false
     }
-}
-
-struct ControlsView: View {
-    @EnvironmentObject var globals: Globals
-    @EnvironmentObject var userSettings: UserSettings
-    @ObservedObject var locationManager = LocationManager()
-    @Binding var view: Int
-    @State private var showModal = false
-    private let altimeter = CMAltimeter()
-    private let activityType = CLActivityType.airborne
     
-    func stopAltimeter() {
-        altimeter.stopRelativeAltitudeUpdates()
-        globals.isAltiStarted = false
+    func stopAltimeter(){
+        Altimeter.shared.stopRelativeAltitudeUpdates()
     }
     
     func startAltimeter() {
-        if CMAltimeter.isRelativeAltitudeAvailable() {
-            switch CMAltimeter.authorizationStatus() {
+        if Altimeter.isRelativeAltitudeAvailable() {
+            switch Altimeter.authorizationStatus() {
             case .notDetermined: // Handle state before user prompt
                 print("CM: Awaiting user prompt...")
             //fatalError("Awaiting CM user prompt...")
@@ -118,8 +55,7 @@ struct ControlsView: View {
             @unknown default:
                 fatalError("Unknown CM Authorization Status!")
             }
-            globals.isAltiStarted = true
-            altimeter.startRelativeAltitudeUpdates(to: OperationQueue.main) {(data,error) in
+            Altimeter.shared.startRelativeAltitudeUpdates(to: OperationQueue.main) {(data,error) in
                 if let trueData = data {
                     print(trueData)
                     globals.relativeAltitude = trueData.relativeAltitude.doubleValue
@@ -127,6 +63,7 @@ struct ControlsView: View {
                     globals.barometricAltitude =  8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh
                 }
             }
+            globals.isAltiStarted = true
         }
     }
     
@@ -136,9 +73,8 @@ struct ControlsView: View {
                 VStack {
                     Button(action: {
                         print("Start")
-                        self.startAltimeter()
-                        locationManager.startLocation()
-                        globals.isLocationStarted = true
+                        startAltimeter()
+                        startLocation()
                         view = (view + 1) % 1
                     }) {
                         Image(systemName: "play.fill")
@@ -150,8 +86,8 @@ struct ControlsView: View {
                 VStack {
                     Button(action: {
                         print("Stop")
-                        self.stopAltimeter()
-                        locationManager.stopLocation()
+                        stopAltimeter()
+                        LocationManager.shared.stop()
                         globals.isLocationStarted = false
                     }) {
                         Image(systemName: "stop.fill")
@@ -165,9 +101,8 @@ struct ControlsView: View {
                 VStack {
                     Button(action: {
                         print("Reset")
-                        self.stopAltimeter()
-                        self.startAltimeter()
-                        globals.isLocationStarted = true
+                        stopAltimeter()
+                        startAltimeter()
                         view = (view + 1) % 1
                     })
                     {
