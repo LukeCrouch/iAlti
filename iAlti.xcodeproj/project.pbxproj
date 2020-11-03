@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		604DB6CF25382F5500C7C9DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604DB6CE25382F5500C7C9DA /* CoreLocation.framework */; };
+		604DB6D125382F5F00C7C9DA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604DB6D025382F5F00C7C9DA /* CoreMotion.framework */; };
 		609669E02523A75A0043F0A0 /* iAlti WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		609669E52523A75D0043F0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669E42523A75D0043F0A0 /* Assets.xcassets */; };
 		609669EC2523A75D0043F0A0 /* iAlti WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 609669EB2523A75D0043F0A0 /* iAlti WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -15,6 +17,10 @@
 		609669F52523A75D0043F0A0 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609669F42523A75D0043F0A0 /* ComplicationController.swift */; };
 		609669F72523A75F0043F0A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669F62523A75F0043F0A0 /* Assets.xcassets */; };
 		609669FA2523A75F0043F0A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609669F92523A75F0043F0A0 /* Preview Assets.xcassets */; };
+		60DBA5A32531D17A00FC307C /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DBA5A22531D17A00FC307C /* ControlsView.swift */; };
+		60DBA5AB2531D32D00FC307C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DBA5AA2531D32D00FC307C /* mainView.swift */; };
+		60DBA5BE253258E900FC307C /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DBA5BD253258E900FC307C /* OverView.swift */; };
+		60DBA5C3253766B100FC307C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DBA5C2253766AF00FC307C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		604DB6CE25382F5500C7C9DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		604DB6D025382F5F00C7C9DA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		609669DB2523A7590043F0A0 /* iAlti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAlti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609669DF2523A75A0043F0A0 /* iAlti WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iAlti WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609669E42523A75D0043F0A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +79,10 @@
 		609669F62523A75F0043F0A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		609669F92523A75F0043F0A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		609669FB2523A75F0043F0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60DBA5A22531D17A00FC307C /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		60DBA5AA2531D32D00FC307C /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
+		60DBA5BD253258E900FC307C /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
+		60DBA5C2253766AF00FC307C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,18 +90,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604DB6D125382F5F00C7C9DA /* CoreMotion.framework in Frameworks */,
+				604DB6CF25382F5500C7C9DA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		604DB6CD25382F5500C7C9DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				604DB6D025382F5F00C7C9DA /* CoreMotion.framework */,
+				604DB6CE25382F5500C7C9DA /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		609669D42523A7590043F0A0 = {
 			isa = PBXGroup;
 			children = (
 				609669E32523A75A0043F0A0 /* iAlti WatchKit App */,
 				609669EF2523A75D0043F0A0 /* iAlti WatchKit Extension */,
 				609669DC2523A7590043F0A0 /* Products */,
+				604DB6CD25382F5500C7C9DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,8 +139,12 @@
 		609669EF2523A75D0043F0A0 /* iAlti WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				609669F02523A75D0043F0A0 /* ContentView.swift */,
 				609669F22523A75D0043F0A0 /* iAltiApp.swift */,
+				609669F02523A75D0043F0A0 /* ContentView.swift */,
+				60DBA5AA2531D32D00FC307C /* mainView.swift */,
+				60DBA5A22531D17A00FC307C /* ControlsView.swift */,
+				60DBA5BD253258E900FC307C /* OverView.swift */,
+				60DBA5C2253766AF00FC307C /* SettingsView.swift */,
 				609669F42523A75D0043F0A0 /* ComplicationController.swift */,
 				609669F62523A75F0043F0A0 /* Assets.xcassets */,
 				609669FB2523A75F0043F0A0 /* Info.plist */,
@@ -259,8 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60DBA5C3253766B100FC307C /* SettingsView.swift in Sources */,
 				609669F12523A75D0043F0A0 /* ContentView.swift in Sources */,
+				60DBA5A32531D17A00FC307C /* ControlsView.swift in Sources */,
 				609669F32523A75D0043F0A0 /* iAltiApp.swift in Sources */,
+				60DBA5AB2531D32D00FC307C /* mainView.swift in Sources */,
+				60DBA5BE253258E900FC307C /* OverView.swift in Sources */,
 				609669F52523A75D0043F0A0 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,20 +433,23 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iAlti WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iAlti WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -424,20 +459,23 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iAlti WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iAlti WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -445,18 +483,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
 				IBSC_MODULE = iAlti_WatchKit_Extension;
 				INFOPLIST_FILE = "iAlti WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -464,18 +504,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
 				IBSC_MODULE = iAlti_WatchKit_Extension;
 				INFOPLIST_FILE = "iAlti WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -484,10 +526,14 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -496,10 +542,14 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6C8S93GQ4Z;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SausageBrothers-Airsports.iAlti";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
