@@ -31,11 +31,19 @@ struct mainView: View {
             Text("Relative Altitude [m]")
                 .font(.system(size: 15))
             Divider()
-            Text("\(globals.glideRatio, specifier: "%.2f")")
-                .font(.system(size: 60))
-                .fontWeight(.bold)
-                .foregroundColor(userSettings.colors[userSettings.colorSelection])
-                .transition(.opacity)
+            if globals.glideRatio > 99 || globals.glideRatio < 0 {
+                Image(systemName: "face.smiling")
+                    .font(.system(size: 60))
+                    .foregroundColor(userSettings.colors[userSettings.colorSelection])
+                    .transition(.opacity)
+            }s
+            else {
+                Text("\(globals.glideRatio, specifier: "%.0f")")
+                    .font(.system(size: 60))
+                    .fontWeight(.bold)
+                    .foregroundColor(userSettings.colors[userSettings.colorSelection])
+                    .transition(.opacity)
+            }
             Text("Glide Ratio")
                 .font(.system(size: 15))
         }
@@ -46,5 +54,7 @@ struct mainView: View {
 struct mainView_Previews: PreviewProvider {
     static var previews: some View {
         mainView()
+            .environmentObject(UserSettings())
+            .environmentObject(Globals())
     }
 }

@@ -12,8 +12,9 @@ struct ContentView: View {
     @EnvironmentObject var userSettings: UserSettings
     @State var view = 0
     @State var location = CLLocation()
-    
+
     var body: some View {
+        
         TabView(selection: $view) {
             ControlsView(view: $view)
                 .environmentObject(globals)
@@ -40,6 +41,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(UserSettings())
+            .environmentObject(Globals())
     }
     
 }

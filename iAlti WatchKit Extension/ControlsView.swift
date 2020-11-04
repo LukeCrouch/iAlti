@@ -13,6 +13,7 @@ struct ControlsView: View {
     @Binding var view: Int
     @State private var showModal = false
     private let activityType = CLActivityType.airborne
+    var altimeterTimestamp = 0.0
     
     func startLocation() {
         switch LocationManager.shared.locationStatus {
@@ -33,14 +34,17 @@ struct ControlsView: View {
             fatalError("Unknown CL Authorization Status!")
         }
         LocationManager.shared.start()
-        globals.isLocationStarted = false
+        globals.isLocationStarted = true
     }
     
     func stopAltimeter(){
         Altimeter.shared.stopRelativeAltitudeUpdates()
+        globals.isAltimeterStarted = false
     }
     
     func startAltimeter() {
+        var timestamp = 0.0
+        
         if Altimeter.isRelativeAltitudeAvailable() {
             switch Altimeter.authorizationStatus() {
             case .notDetermined: // Handle state before user prompt
@@ -51,19 +55,22 @@ struct ControlsView: View {
             case .denied: // Handle user denied state
                 fatalError("CM Authorization denied!")
             case .authorized: // Ready to go!
-                let _ = print("CM Authorized!")
+                print("CM Authorized!")
             @unknown default:
                 fatalError("Unknown CM Authorization Status!")
             }
             Altimeter.shared.startRelativeAltitudeUpdates(to: OperationQueue.main) {(data,error) in
                 if let trueData = data {
                     print(trueData)
-                    globals.relativeAltitude = trueData.relativeAltitude.doubleValue
                     globals.pressure = trueData.pressure.doubleValue * 10
-                    globals.barometricAltitude =  8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh
+                    globals.barometricAltitude =  8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh //To Do Update formula to be more accurate
+                    globals.speedV = (trueData.relativeAltitude.doubleValue - globals.relativeAltitude) / (trueData.timestamp - timestamp)
+                    globals.glideRatio = (LocationManager.shared.lastLocation?.speed ?? 0.0) / (-1 * globals.speedV)
+                    timestamp = trueData.timestamp
+                    globals.relativeAltitude = trueData.relativeAltitude.doubleValue
                 }
             }
-            globals.isAltiStarted = true
+            globals.isAltimeterStarted = true
         }
     }
     

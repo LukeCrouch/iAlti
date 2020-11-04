@@ -12,21 +12,19 @@ import CoreMotion
 
 class UserSettings: ObservableObject {
     @Published var colors = [Color.green, Color.white, Color.red, Color.blue, Color.orange, Color.yellow, Color.pink, Color.purple]
-    @Published var colorSelection = 0
-    @Published var qnh = 1013.25
-    @Published var offset = 0.0
+    @Published var colorSelection: Int = 0
+    @Published var qnh: Double = 1013.25
+    @Published var offset: Double = 0
 }
 
 class Globals: ObservableObject {
-    @Published var pressure = 0.0
-    @Published var isAltiStarted = false
+    @Published var pressure: Double = 0
+    @Published var isAltimeterStarted = false
     @Published var isLocationStarted = false
-    @Published var gpsAltitude: CLLocationDistance = 0.0
-    @Published var barometricAltitude = 0.0
-    @Published var relativeAltitude = 0.0
-    @Published var speedV = 0.0
-    @Published var speedH = 0.0
-    @Published var glideRatio = 0.0
+    @Published var barometricAltitude: Double = 0
+    @Published var relativeAltitude: Double = 0
+    @Published var speedV: Double = 0
+    @Published var glideRatio: Double = 0
 }
 
 final class Altimeter: CMAltimeter {
@@ -43,7 +41,7 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
         self.locationManager.allowsBackgroundLocationUpdates = true
     }
     
-
+    
     private let locationManager = CLLocationManager()
     static let shared = LocationManager()
     //let objectWillChange = PassthroughSubject<Void, Never>()
