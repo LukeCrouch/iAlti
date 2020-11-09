@@ -93,6 +93,14 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     }
 }
 
+public extension String {
+    var model: String? {
+        guard let base64 = Data(base64Encoded: self) else { return nil }
+        let utf8 = String(data: base64, encoding: .utf8)
+        return utf8
+    }
+}
+
 @main
 struct iAltiApp: App {
     @StateObject var globals = Globals()

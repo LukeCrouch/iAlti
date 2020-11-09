@@ -36,7 +36,7 @@ struct mainView: View {
                     .font(.system(size: 60))
                     .foregroundColor(userSettings.colors[userSettings.colorSelection])
                     .transition(.opacity)
-            }s
+            }
             else {
                 Text("\(globals.glideRatio, specifier: "%.0f")")
                     .font(.system(size: 60))
@@ -53,8 +53,10 @@ struct mainView: View {
 
 struct mainView_Previews: PreviewProvider {
     static var previews: some View {
-        mainView()
-            .environmentObject(UserSettings())
-            .environmentObject(Globals())
+        Group {
+            mainView()
+                .environmentObject(UserSettings())
+                .environmentObject(Globals())
+        }
     }
 }

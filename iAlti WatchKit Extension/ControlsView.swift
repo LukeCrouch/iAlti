@@ -79,7 +79,7 @@ struct ControlsView: View {
             HStack {
                 VStack {
                     Button(action: {
-                        print("Start")
+                        print("Start Button pressed")
                         startAltimeter()
                         startLocation()
                         view = (view + 1) % 1
@@ -92,7 +92,7 @@ struct ControlsView: View {
                 }
                 VStack {
                     Button(action: {
-                        print("Stop")
+                        print("Stop Button pressed")
                         stopAltimeter()
                         LocationManager.shared.stop()
                         globals.isLocationStarted = false
@@ -107,7 +107,7 @@ struct ControlsView: View {
             HStack {
                 VStack {
                     Button(action: {
-                        print("Reset")
+                        print("Reset Button pressed")
                         stopAltimeter()
                         startAltimeter()
                         view = (view + 1) % 1
@@ -121,7 +121,7 @@ struct ControlsView: View {
                 }
                 VStack {
                     Button(action: {
-                        print("Settings")
+                        print("Settings Button pressed")
                         showModal.toggle()
                     }) {
                         Image(systemName: "gearshape.fill")
