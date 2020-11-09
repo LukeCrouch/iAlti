@@ -63,7 +63,7 @@ struct ControlsView: View {
                 if let trueData = data {
                     print(trueData)
                     globals.pressure = trueData.pressure.doubleValue * 10
-                    globals.barometricAltitude =  8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh //To Do Update formula to be more accurate
+                    globals.barometricAltitude =  8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh
                     globals.speedV = (trueData.relativeAltitude.doubleValue - globals.relativeAltitude) / (trueData.timestamp - timestamp)
                     globals.glideRatio = (LocationManager.shared.lastLocation?.speed ?? 0.0) / (-1 * globals.speedV)
                     timestamp = trueData.timestamp
@@ -111,6 +111,7 @@ struct ControlsView: View {
                         stopAltimeter()
                         startAltimeter()
                         view = (view + 1) % 1
+                        userSettings.offset = 0
                     })
                     {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
@@ -122,6 +123,7 @@ struct ControlsView: View {
                 VStack {
                     Button(action: {
                         print("Settings Button pressed")
+                        globals.isAltimeterStarted = true
                         showModal.toggle()
                     }) {
                         Image(systemName: "gearshape.fill")

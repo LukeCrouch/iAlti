@@ -5,8 +5,6 @@
 //  Created by Lukas Wheldon on 14.10.20.
 //
 
-//API Key
-
 import SwiftUI
 import Combine
 
@@ -24,6 +22,7 @@ struct SettingsView: View {
     @State private var results = [Weather]()
     @State private var showingAlert = false
     @State private var selection: Int = 0
+
     let Colors = ["Green", "White", "Red", "Blue", "Orange", "Yellow", "Pink", "Purple"]
     
     func autoCalib() {
@@ -47,6 +46,7 @@ struct SettingsView: View {
                     DispatchQueue.main.async {
                         userSettings.qnh = decodedResponse.main?.pressure ?? 0
                         print("Calibrated with a pulled pressure of", decodedResponse.main?.pressure ?? 0)
+                        userSettings.offset = 8400 * (userSettings.qnh - globals.pressure) / userSettings.qnh
                     }
                     return
                 }
