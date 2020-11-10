@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct indicatorLine: View {
+struct IndicatorLine: View {
     @EnvironmentObject var globals: Globals
     @State private var toggle = false
     var name: String
@@ -22,12 +22,9 @@ struct indicatorLine: View {
                     .scaleEffect(0.5)
                     .foregroundColor(.red)
                     .opacity(toggle ? 0 : 1)
-                    .onAppear() {
-                        toggle.toggle()}
+                    .onAppear(){toggle.toggle()}
                     .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true).speed(1))
-            }
-            
-            else {
+            } else {
                 Image(systemName: "circle.fill")
                     .imageScale(.small)
                     .scaleEffect(0.5)
@@ -43,12 +40,12 @@ struct OverView: View {
     
     var body: some View {
         VStack {
-            indicatorLine(name: "Barometer")
+            IndicatorLine(name: "Barometer")
             OverViewLine(name: "Pressure [hPa]", value: globals.pressure, decimals: 2)
             OverViewLine(name: "Altitude MSL [m]", value: globals.barometricAltitude, decimals: 0)
             OverViewLine(name: "Vertical Speed [m/s]", value: globals.speedV, decimals: 1)
             Divider()
-            indicatorLine(name: "GPS")
+            IndicatorLine(name: "GPS")
             OverViewLine(name: "Altitude MSL [m]", value: LocationManager.shared.lastLocation?.altitude ?? 0.0, decimals: 0)
             OverViewLine(name: "Horizontal Speed [m/s]", value: LocationManager.shared.lastLocation?.speed ?? 0.0, decimals: 1)
         }

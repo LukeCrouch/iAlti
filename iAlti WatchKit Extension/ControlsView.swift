@@ -68,10 +68,12 @@ struct ControlsView: View {
                     globals.glideRatio = (LocationManager.shared.lastLocation?.speed ?? 0.0) / (-1 * globals.speedV)
                     timestamp = trueData.timestamp
                     globals.relativeAltitude = trueData.relativeAltitude.doubleValue
+                } else {
+                    print("Error starting relative Altitude Updates: \(error?.localizedDescription ?? "Unknown Error")")
                 }
             }
-            globals.isAltimeterStarted = true
         }
+        globals.isAltimeterStarted = true
     }
     
     var body: some View {
@@ -83,11 +85,11 @@ struct ControlsView: View {
                         startAltimeter()
                         startLocation()
                         view = (view + 1) % 1
-                    }) {
+                    }, label: {
                         Image(systemName: "play.fill")
                             .foregroundColor(.green)
                             .font(.title)
-                    }
+                    })
                     Text("Start")
                 }
                 VStack {
@@ -96,11 +98,11 @@ struct ControlsView: View {
                         stopAltimeter()
                         LocationManager.shared.stop()
                         globals.isLocationStarted = false
-                    }) {
+                    }, label: {
                         Image(systemName: "stop.fill")
                             .foregroundColor(.red)
                             .font(.title)
-                    }
+                    })
                     Text("Stop")
                 }
             }
@@ -112,12 +114,11 @@ struct ControlsView: View {
                         startAltimeter()
                         view = (view + 1) % 1
                         userSettings.offset = 0
-                    })
-                    {
+                    }, label: {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
                             .foregroundColor(.blue)
                             .font(.title)
-                    }
+                    })
                     Text("Reset")
                 }
                 VStack {
@@ -125,11 +126,11 @@ struct ControlsView: View {
                         print("Settings Button pressed")
                         globals.isAltimeterStarted = true
                         showModal.toggle()
-                    }) {
+                    }, label: {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(.yellow)
                             .font(.title)
-                    }
+                    })
                     Text("Settings")
                 }.sheet(isPresented: $showModal) {
                     SettingsView()

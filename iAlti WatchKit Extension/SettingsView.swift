@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct Weather: Codable  {
+struct Weather: Codable {
     var main: Main?
 }
 
@@ -23,7 +23,7 @@ struct SettingsView: View {
     @State private var showingAlert = false
     @State private var selection: Int = 0
 
-    let Colors = ["Green", "White", "Red", "Blue", "Orange", "Yellow", "Pink", "Purple"]
+    let colors = ["Green", "White", "Red", "Blue", "Orange", "Yellow", "Pink", "Purple"]
     
     func autoCalib() {
         let pressureCall = "ZmY1N2FmZThkOGY2N2U2MzIwNmVmZmQ2MTM3NmMzZDc="
@@ -37,11 +37,11 @@ struct SettingsView: View {
         let request = URLRequest(url: url)
         print("Request ", request)
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { data, decodedResponse, error in
             print("URLSession started")
             if let data = data {
                 print("URLSession data received", data)
-                if let decodedResponse = try? JSONDecoder().decode(Weather.self, from: data){
+                if let decodedResponse = try? JSONDecoder().decode(Weather.self, from: data) {
                     print("URLSession response decoded", decodedResponse)
                     DispatchQueue.main.async {
                         userSettings.qnh = decodedResponse.main?.pressure ?? 0
@@ -83,8 +83,7 @@ struct SettingsView: View {
                         if globals.isLocationStarted {
                             print("Auto Calibration started")
                             autoCalib()
-                        }
-                        else {
+                        } else {
                             self.showingAlert = true
                         }
                     }, label: {
@@ -100,8 +99,8 @@ struct SettingsView: View {
                 }
                 VStack {
                     Picker("", selection: $selection, content: {
-                            ForEach(0 ..< Colors.count) {
-                                index in Text(Colors[index]).tag(index)
+                            ForEach(0 ..< colors.count) {
+                                index in Text(colors[index]).tag(index)
                             }})
                         .foregroundColor(userSettings.colors[userSettings.colorSelection])
                 }
