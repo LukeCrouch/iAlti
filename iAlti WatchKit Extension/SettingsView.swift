@@ -22,7 +22,7 @@ struct SettingsView: View {
     @State private var results = [Weather]()
     @State private var showingAlert = false
     @State private var selection: Int = 0
-    
+
     let colors = ["Green", "White", "Red", "Blue", "Orange", "Yellow", "Pink", "Purple"]
     
     func autoCalib() {

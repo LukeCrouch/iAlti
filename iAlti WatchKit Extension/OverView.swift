@@ -23,6 +23,7 @@ struct IndicatorLine: View {
                     .foregroundColor(.red)
                     .opacity(toggle ? 0 : 1)
                     .onAppear() {toggle.toggle()}
+
                     .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true).speed(1))
             } else {
                 Image(systemName: "circle.fill")
