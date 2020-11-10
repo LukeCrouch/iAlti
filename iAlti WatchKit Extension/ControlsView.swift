@@ -37,7 +37,7 @@ struct ControlsView: View {
         globals.isLocationStarted = true
     }
     
-    func stopAltimeter(){
+    func stopAltimeter() {
         Altimeter.shared.stopRelativeAltitudeUpdates()
         globals.isAltimeterStarted = false
     }
@@ -112,8 +112,11 @@ struct ControlsView: View {
                         print("Reset Button pressed")
                         stopAltimeter()
                         startAltimeter()
-                        view = (view + 1) % 1
+                        if globals.isAltimeterStarted == false {
+                            globals.isAltimeterStarted = true
+                        }
                         userSettings.offset = 0
+                        view = (view + 1) % 1
                     }, label: {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
                             .foregroundColor(.blue)
@@ -124,7 +127,6 @@ struct ControlsView: View {
                 VStack {
                     Button(action: {
                         print("Settings Button pressed")
-                        globals.isAltimeterStarted = true
                         showModal.toggle()
                     }, label: {
                         Image(systemName: "gearshape.fill")

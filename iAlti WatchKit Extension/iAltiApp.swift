@@ -43,7 +43,7 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     
     private let locationManager = CLLocationManager()
     static let shared = LocationManager()
-    //let objectWillChange = PassthroughSubject<Void, Never>()
+    let objectWillChange = PassthroughSubject<Void, Never>()
     
     @Published var locationStatus: CLAuthorizationStatus? {
         willSet {

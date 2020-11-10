@@ -13,22 +13,23 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            if globals.relativeAltitude > 999 || globals.relativeAltitude < -999 {
+            if (globals.relativeAltitude + userSettings.offset) > 999 || (globals.relativeAltitude + userSettings.offset) < -999 {
                 Text("\((globals.relativeAltitude + userSettings.offset) / 1000, specifier: "%.2f")")
                     .font(.system(size: 60))
                     .fontWeight(.bold)
                     .foregroundColor(userSettings.colors[userSettings.colorSelection])
                     .transition(.opacity)
+                Text("Relative Altitude [km]")
+                    .font(.system(size: 15))
             } else {
                 Text("\(globals.relativeAltitude + userSettings.offset, specifier: "%.0f")")
                     .font(.system(size: 60))
                     .fontWeight(.bold)
                     .foregroundColor(userSettings.colors[userSettings.colorSelection])
                     .transition(.opacity)
+                Text("Relative Altitude [m]")
+                    .font(.system(size: 15))
             }
-            Spacer()
-            Text("Relative Altitude [m]")
-                .font(.system(size: 15))
             Divider()
             if globals.glideRatio > 99 || globals.glideRatio < 0 {
                 Image(systemName: "face.smiling")
