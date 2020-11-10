@@ -22,7 +22,7 @@ struct ContentView: View {
             .tabItem {
                 Text("Controls")
             }.tag(1)
-            mainView()
+            MainView()
                 .environmentObject(globals)
                 .environmentObject(userSettings)
                 .tabItem {

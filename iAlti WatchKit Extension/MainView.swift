@@ -1,5 +1,5 @@
 //
-//  mainView.swift
+//  MainView.swift
 //  iAlti WatchKit Extension
 //
 //  Created by Lukas Wheldon on 10.10.20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct mainView: View {
+struct MainView: View {
     @EnvironmentObject var globals: Globals
     @EnvironmentObject var userSettings: UserSettings
     
@@ -19,8 +19,7 @@ struct mainView: View {
                     .fontWeight(.bold)
                     .foregroundColor(userSettings.colors[userSettings.colorSelection])
                     .transition(.opacity)
-            }
-            else {
+            } else {
                 Text("\(globals.relativeAltitude + userSettings.offset, specifier: "%.0f")")
                     .font(.system(size: 60))
                     .fontWeight(.bold)
@@ -36,8 +35,7 @@ struct mainView: View {
                     .font(.system(size: 60))
                     .foregroundColor(userSettings.colors[userSettings.colorSelection])
                     .transition(.opacity)
-            }
-            else {
+            } else {
                 Text("\(globals.glideRatio, specifier: "%.0f")")
                     .font(.system(size: 60))
                     .fontWeight(.bold)
@@ -51,10 +49,10 @@ struct mainView: View {
     }
 }
 
-struct mainView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            mainView()
+            MainView()
                 .environmentObject(UserSettings())
                 .environmentObject(Globals())
         }

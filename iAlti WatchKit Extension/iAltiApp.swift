@@ -41,7 +41,6 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
         self.locationManager.allowsBackgroundLocationUpdates = true
     }
     
-    
     private let locationManager = CLLocationManager()
     static let shared = LocationManager()
     //let objectWillChange = PassthroughSubject<Void, Never>()
