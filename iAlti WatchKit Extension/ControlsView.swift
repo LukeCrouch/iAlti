@@ -112,9 +112,6 @@ struct ControlsView: View {
                         print("Reset Button pressed")
                         stopAltimeter()
                         startAltimeter()
-                        if globals.isAltimeterStarted == false {
-                            globals.isAltimeterStarted = true
-                        }
                         userSettings.offset = 0
                         view = (view + 1) % 1
                     }, label: {

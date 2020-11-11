@@ -11,7 +11,6 @@ struct ContentView: View {
     @EnvironmentObject var globals: Globals
     @EnvironmentObject var userSettings: UserSettings
     @State var view = 0
-    @State var location = CLLocation()
 
     var body: some View {
         

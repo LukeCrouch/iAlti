@@ -29,6 +29,8 @@ struct OverViewLine: View {
 struct OverView: View {
     @EnvironmentObject var globals: Globals
     @EnvironmentObject var userSettings: UserSettings
+    @State private var toggleAlti = false
+    @State private var toggleLoc = false
     
     var body: some View {
         VStack {
@@ -40,6 +42,9 @@ struct OverView: View {
                         .imageScale(.small)
                         .scaleEffect(0.5)
                         .foregroundColor(.red)
+                        .opacity(toggleAlti ? 0 : 1)
+                        .onAppear(perform: {toggleAlti.toggle()})
+                        .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true).speed(1))
                 } else {
                     Image(systemName: "circle.fill")
                         .imageScale(.small)
@@ -59,6 +64,9 @@ struct OverView: View {
                         .imageScale(.small)
                         .scaleEffect(0.5)
                         .foregroundColor(.red)
+                        .opacity(toggleLoc ? 0 : 1)
+                        .onAppear(perform: {toggleLoc.toggle()})
+                        .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true).speed(1))
                 } else {
                     Image(systemName: "circle.fill")
                         .imageScale(.small)
